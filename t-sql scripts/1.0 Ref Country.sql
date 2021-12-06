@@ -44,7 +44,7 @@ VALUES
 ('East Germany, West Germany',42),
 ('Denmark',43),
 ('Finland',44),
-(' Switzerland',45),
+('Switzerland',45),
 ('Uruguay',46),
 ('Venezuela',47),
 ('Czech Republic',48),
