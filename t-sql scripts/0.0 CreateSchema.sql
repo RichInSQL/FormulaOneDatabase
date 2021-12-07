@@ -87,7 +87,7 @@ DateAdded DATETIME DEFAULT GETDATE(),
 LastUpdated DATETIME 
 );
 
-ALTER TABLE dbo.Drivers ADD CONSTRAINT PK_Drivers_ID PRIMARY KEY (DriverStandingID);
+ALTER TABLE dbo.DriversStandings ADD CONSTRAINT PK_DriversStandings_DriverStandingID PRIMARY KEY (DriverStandingID);
 
 CREATE TABLE dbo.DriversSeasons
 (
@@ -104,6 +104,8 @@ CREATE TABLE dbo.DriversChampionships
 	DriverID  INT NOT NULL,	
 	SeasonRefID INT
 )
+
+ALTER TABLE dbo.DriversChampionships ADD CONSTRAINT PK_DriversChampionships_ID PRIMARY KEY (ID);
 
 CREATE TABLE dbo.Constructors
 (
@@ -233,6 +235,11 @@ ALTER TABLE dbo.Constructors ADD CONSTRAINT FK_Constructors_CountryID  FOREIGN K
 ALTER TABLE dbo.CircuitSeasons ADD CONSTRAINT FK_CircuitSeasons_CircuitID  FOREIGN KEY (CircuitID) REFERENCES dbo.Circuits(CircuitID);
 ALTER TABLE dbo.CircuitSeasons ADD CONSTRAINT FK_CircuitSeasons_SeasonRefID  FOREIGN KEY (SeasonID) REFERENCES Ref.Seasons(SeasonRefID);
 
+ALTER TABLE dbo.DriversStandings ADD CONSTRAINT FK_DriversStandings_DriverID FOREIGN KEY (DriverID) REFERENCES dbo.Drivers(DriverID);
+ALTER TABLE dbo.DriversStandings ADD CONSTRAINT FK_DriversStandings_SeasonID FOREIGN KEY (SeasonID) REFERENCES Ref.Seasons(SeasonRefID);
+
+ALTER TABLE dbo.ConstructorStandings ADD CONSTRAINT FK_ConstructorStandings_ConstructorID FOREIGN KEY (ConstructorID) REFERENCES dbo.Constructors(ConstructorID);
+ALTER TABLE dbo.ConstructorStandings ADD CONSTRAINT FK_ConstructorStandings_SeasonID FOREIGN KEY (SeasonID) REFERENCES Ref.Seasons(SeasonRefID);
 
 
 
