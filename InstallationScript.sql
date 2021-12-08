@@ -233,10 +233,6 @@ ALTER TABLE dbo.CircuitSeasons ADD CONSTRAINT FK_CircuitSeasons_SeasonRefID  FOR
 
 GO
 
-USE FormulaOne
-
-GO
-
 INSERT INTO [Ref].[Country] (Country,CountryID)
 VALUES
 ('Germany',1),
@@ -5643,8 +5639,8 @@ VALUES
 (76,71),
 (77,15)
 
-INSERT INTO [dbo].[Constructors]([Constructor], [ConstructorID], [CountryID], [RacesEntered], [RacesStarted], [Drivers], [TotalEntries], [Wins], [Points], [Poles], [FL], [Podiums], [WCC], [WDC])
-VALUES
+"INSERT INTO [dbo].[Constructors]([Constructor], [ConstructorID], [CountryID], [RacesEntered], [RacesStarted], [Drivers], [TotalEntries], [Wins], [Points], [Poles], [FL], [Podiums], [WCC], [WDC])
+VALUES"
 ('Alex von Falkenhausen Motorenbau',1,1,4,4,6,9,0,0,0,0,0,0,0),
 ('Automobiles Gonfaronnaises Sportives',2,2,80,32,10,124,0,2,0,0,0,0,0),
 ('Alta',3,3,5,5,4,6,0,0,0,0,0,0,0),
@@ -5778,7 +5774,17 @@ VALUES
 ('Veritas',139,1,6,6,15,18,0,0,0,0,0,0,0),
 ('Virgin',140,3,38,38,3,76,0,0,0,0,0,0,0),
 ('Wolf (Walter Wolf Racing)',142,22,48,47,4,54,3,79,1,2,13,0,0),
-('Zakspeed',143,1,74,54,7,136,0,2,0,0,0,0,0)
+('Zakspeed',143,1,74,54,7,136,0,2,0,0,0,0,0),
+('Alfa Romeo',144,6,168,167,21,351,10,126,12,14,26,0,2),
+('AlphaTauri',145,5,37,36,3,74,1,219,0,1,2,0,0),
+('Alpine',146,2,20,19,2,40,1,112,0,0,1,0,0),
+('Aston Martin',147,3,26,24,5,51,0,68,0,0,1,0,0),
+('Ferrari',148,5,1030,1027,81,2186,238,8676,230,254,777,16,15),
+('Haas',149,10,120,119,6,240,0,200,0,2,0,0,0),
+('McLaren',150,3,904,899,51,1877,183,5811.5,156,160,493,8,12),
+('Mercedes',151,1,247,246,12,506,122,6206.5,133,93,260,7,9),
+('Red Bull',152,36,324,322,11,644,74,5554,72,74,203,4,4),
+('Williams',153,3,757,755,44,1431,114,3584,128,133,313,9,7)
 
 INSERT INTO  [dbo].[CircuitsLocation] ([CircuitID],[CountryID],[Longitude],[Latitude])
 VALUES
@@ -5940,39 +5946,39 @@ VALUES
 (76,'https://i.ibb.co/wcd5GL0/Yas-Marina-Circuit.png'),
 (77,'https://i.ibb.co/0qvh7md/Zeltweg-Airfield.png')
 
-INSERT INTO DriversStandings (DriverID,Points)
+INSERT INTO [dbo].[DriversStandings] ([DriverID], [SeasonID], [Points])
 VALUES
-(879,351.5),
-(843,343.5),
-(869,203),
-(861,190),
-(892,153),
-(890,152),
-(878,145.5),
-(862,105),
-(886,92),
-(808,77),
-(884,60),
-(845,43),
-(887,34),
-(899,20),
-(893,16),
-(806,10),
-(896,7),
-(888,1),
-(898,0),
-(836,0),
-(897,0)
+(879,72,369.5),
+(843,72,369.5),
+(869,72,218),
+(861,72,190),
+(890,72,158),
+(892,72,154),
+(878,72,149.5),
+(862,72,115),
+(886,72,100),
+(808,72,77),
+(884,72,72),
+(845,72,43),
+(887,72,34),
+(899,72,20),
+(893,72,16),
+(806,72,10),
+(896,72,7),
+(888,72,3),
+(898,72,0),
+(836,72,0),
+(897,72,0)
 
-INSERT INTO ConstructorStandings (ConstructorID,SeasonID,Points)
+INSERT INTO [dbo].[ConstructorStandings] ([ConstructorID], [SeasonID], [Points])
 VALUES
-(151,72,546.5),
-(152,72,541.5),
-(148,72,297.5),
-(150,72,258),
-(146,72,137),
-(145,72,112),
+(151,72,587.5),
+(152,72,559.5),
+(148,72,307.5),
+(150,72,269),
+(146,72,149),
+(145,72,120),
 (147,72,77),
 (153,72,23),
-(144,72,11),
+(144,72,13),
 (149,72,0)
