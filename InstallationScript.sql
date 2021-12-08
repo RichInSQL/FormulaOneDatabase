@@ -1,4 +1,27 @@
-CREATE DATABASE [FormulaOne];
+/*
+****************************
+CREATE THE DATABASE
+- If not exist create 
+- If exists drop & create
+****************************
+*/
+
+DECLARE @sql narchar(1000)
+
+IF(NOT EXISTS (SELECT name FROM master.dbo.databases WHERE (name = 'FormulaOne' OR name = '[FormulaOne]')))
+BEGIN
+	CREATE DATABASE [FormulaOne];
+END
+ELSE 
+BEGIN
+	SET @SQL = N'USE [FormulaOne];
+
+                 ALTER DATABASE FormulaOne SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+                 USE [tempdb];
+
+                 DROP DATABASE FormulaOne;';
+    EXEC (@SQL);
+END 
 
 GO
 
