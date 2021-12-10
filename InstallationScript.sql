@@ -181,11 +181,11 @@ CREATE TABLE dbo.Circuits
 (
 	CircuitID INT NOT NULL,
 	Circuit varchar(200) NOT NULL,	
-	GrandsPrix varchar(200) NOT NULL,		
+	GrandPrix varchar(200) NOT NULL,		
 	TypeRefID INT,	
 	DirectionRefID INT,	
 	LastLengthUsed DECIMAL(5,3),	
-	GrandsPrixHeld INT
+	GrandPrixHeld INT
 );
 
 ALTER TABLE dbo.Circuits ADD CONSTRAINT PK_Circuits_CircuitID PRIMARY KEY (CircuitID);
@@ -4523,7 +4523,7 @@ VALUES
 (845,63),
 (845,64)
 
-INSERT INTO [dbo].[Circuits] ([Circuit], [GrandsPrix], [CircuitID], [TypeRefID], [DirectionRefID], [LastLengthUsed], [GrandsPrixHeld])
+INSERT INTO [dbo].[Circuits] ([Circuit], [GrandPrix], [CircuitID], [TypeRefID], [DirectionRefID], [LastLengthUsed], [GrandPrixHeld])
 VALUES
 ('Adelaide Street Circuit','Australian Grand Prix',1,1,1,3.78,11),
 ('Ain-Diab Circuit','Moroccan Grand Prix',2,2,1,7.618,1),
