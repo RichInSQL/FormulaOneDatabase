@@ -76,4 +76,5 @@ VALUES
 (74,'https://i.ibb.co/7XJnJZ9/Valencia-Street-Circuit.png'),
 (75,'https://i.ibb.co/z2sMKjp/Watkins-Glen.png'),
 (76,'https://i.ibb.co/wcd5GL0/Yas-Marina-Circuit.png'),
-(77,'https://i.ibb.co/0qvh7md/Zeltweg-Airfield.png')
+(77,'https://i.ibb.co/0qvh7md/Zeltweg-Airfield.png'),
+(78,'https://i.ibb.co/DtCtRYm/Albert-Park-Circuit.png')

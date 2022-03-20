@@ -44,7 +44,7 @@ VALUES
 ('East Germany, West Germany',42),
 ('Denmark',43),
 ('Finland',44),
-('Switzerland',45),
+(' Switzerland',45),
 ('Uruguay',46),
 ('Venezuela',47),
 ('Czech Republic',48),
@@ -54,4 +54,5 @@ VALUES
 ('Poland',52),
 ('Russian Automobile Federation',53),
 ('Liechtenstein',54),
-('Chile',55)
+('Chile',55),
+('China',56)
