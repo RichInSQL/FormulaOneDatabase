@@ -202,6 +202,16 @@ CREATE TABLE dbo.CircuitSeasons
 
 ALTER TABLE dbo.CircuitSeasons ADD CONSTRAINT PK_CircuitSeasons_ID PRIMARY KEY (ID);
 
+CREATE TABLE dbo.DriversTeams
+(
+ID INT IDENTITY(1,1) NOT NULL,
+DriverID INT NOT NULL,
+ConstructorID INT NOT NULL,
+SeasonID INT NOT NULL
+);
+
+ALTER TABLE dbo.DriversTeams ADD CONSTRAINT PK_DriversTeams_DriverID PRIMARY KEY (DriverID);
+
 /*
 ****************************
 CREATE THE RELATIONSHIPS 
@@ -241,5 +251,5 @@ ALTER TABLE dbo.DriversStandings ADD CONSTRAINT FK_DriversStandings_SeasonID FOR
 ALTER TABLE dbo.ConstructorStandings ADD CONSTRAINT FK_ConstructorStandings_ConstructorID FOREIGN KEY (ConstructorID) REFERENCES dbo.Constructors(ConstructorID);
 ALTER TABLE dbo.ConstructorStandings ADD CONSTRAINT FK_ConstructorStandings_SeasonID FOREIGN KEY (SeasonID) REFERENCES Ref.Seasons(SeasonRefID);
 
-
-
+ALTER TABLE dbo.DriversTeams ADD CONSTRAINT FK_DriversTeams_ConstructorID FOREIGN KEY (ConstructorID) REFERENCES [dbo].[Constructors] (ConstructorID);
+ALTER TABLE dbo.DriversTeams ADD CONSTRAINT FK_DriversTeams_SeasonID FOREIGN KEY (SeasonID) REFERENCES [Ref].[Seasons] (SeasonRefID);
